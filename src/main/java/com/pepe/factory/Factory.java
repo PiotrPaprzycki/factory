@@ -1,19 +1,20 @@
 package com.pepe.factory;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-public class Product {
+public class Factory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
-    private int amount;
+    private String type;
 
-    @ManyToOne
-    Factory factory;
+    @OneToMany
+    List<Product> products;
 
     public Long getId() {
         return id;
@@ -31,19 +32,19 @@ public class Product {
         this.name = name;
     }
 
-    public int getAmount() {
-        return amount;
+    public String getType() {
+        return type;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public Factory getFactory() {
-        return factory;
+    public List<Product> getProducts() {
+        return products;
     }
 
-    public void setFactory(Factory factory) {
-        this.factory = factory;
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }
