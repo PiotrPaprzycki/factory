@@ -1,4 +1,6 @@
-package com.pepe.factory;
+package com.pepe.factory.product;
+
+import com.pepe.factory.factory.Factory;
 
 import javax.persistence.*;
 
