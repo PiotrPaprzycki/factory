@@ -14,10 +14,10 @@ public class FactoryController {
         this.factoryRepository = factoryRepository;
     }
 
-    @GetMapping("/")
+    @GetMapping("/factories")
     public String home(Model model) {
         model.addAttribute("factory", factoryRepository.findAll());
-        return "home";
+        return "factories";
     }
 
 }

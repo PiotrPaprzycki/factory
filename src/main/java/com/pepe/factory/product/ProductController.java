@@ -19,10 +19,10 @@ public class ProductController {
 
     @GetMapping("/products/{id}")
     public String factory(Model model, @PathVariable Long id) { // tu mozna przekazac id fabryki
-        List<Product> allProducts;
-        allProducts = productRepository.findAll();
+//        List<Product> allProducts;
+//        allProducts = productRepository.findAll();
 
-        model.addAttribute("allProducts", allProducts);
+        model.addAttribute("allProducts", productRepository.findAll());
 
         return "products";
     }
